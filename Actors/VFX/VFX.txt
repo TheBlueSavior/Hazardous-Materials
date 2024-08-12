@@ -152,6 +152,7 @@ Class HM_NormalHitSpark : Actor
 	}
 }
 
+//Base barrel shrapnel code by Bugsie
 Class HM_BarrelShrapnel : Actor
 {
   Default

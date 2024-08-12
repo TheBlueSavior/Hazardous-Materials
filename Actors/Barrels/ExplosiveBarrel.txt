@@ -58,7 +58,7 @@ Class HM_ExpBarrel : Actor
 	Death:
 		TNT1 A 0;
 		TNT1 A 0 A_StartSound("HMBarrel/Strain",33,CHANF_OVERLAP,frandom(0.7,1.0));
-		BRL_ AAAAAAAA 1
+		BRL_ AAAAAAAA 1 Light("HML_BarrelIgnited")
 		{
 		A_SpawnParticleEx("",tex[2],style: STYLE_Add,flags: SPF_RELATIVE|SPF_FULLBRIGHT,lifetime: 4,size: 100.0,xoff: random(-10,10),yoff:random(-10,10),zoff:random(15,25),startalphaf: 0.6);
 		}
@@ -94,7 +94,7 @@ Class HM_ExpBarrel : Actor
 		TNT1 AAAAA 0 A_SpawnItemEx("HM_BarrelShrapnel", frandom(-20, 20), frandom(-20, 20), frandom(5, 56), (vel.x / 4) + frandom(-20, 20), (vel.y / 4) + frandom(-20, 20), (vel.z / 4) + frandom(1, 20), frandom(0, 360), SXF_NOCHECKPOSITION|SXF_ABSOLUTEVELOCITY, 130);
 		TNT1 A 0 A_SpawnItemEx("HM_BarrelSprayExplosion",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
 		TNT1 AAAAAA 0 A_SpawnItemEx("HM_GenericExplosionFlames",0,0,5,random(-5,5),random(-5,5),random(0,5),0,SXF_NOCHECKPOSITION);
-		TNT1 A 7 Light("HML_BarrelExplode");
+		TNT1 A 20 Light("HML_BarrelExplode");
 		TNT1 A 1050 A_BarrelDestroy;
 		TNT1 A 5 A_Respawn;
 		Stop;
