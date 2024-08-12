@@ -1,1 +1,50 @@
-//Placeholder
+
+
+$random HMBarrel/Explode { HMBarrel/Explode1 HMBarrel/Explode2 HMBarrel/Explode3 }
+HMBarrel/Explode1 "Sounds/Explosions/HMBarrelExp1.ogg"
+HMBarrel/Explode2 "Sounds/Explosions/HMBarrelExp2.ogg"
+HMBarrel/Explode3 "Sounds/Explosions/HMBarrelExp3.ogg"
+$limit HMBarrel/Explode 0
+$pitchset HMBarrel/Explode 0.9 1.15
+$rolloff HMBarrel/Explode 400 2800
+
+$random HMBarrel/ExpExtra { HMBarrel/ExpExtra1 HMBarrel/ExpExtra2 HMBarrel/ExpExtra3 }
+HMBarrel/ExpExtra1 "Sounds/Explosions/HMBarrelExpExtra1.ogg"
+HMBarrel/ExpExtra2 "Sounds/Explosions/HMBarrelExpExtra2.ogg"
+HMBarrel/ExpExtra3 "Sounds/Explosions/HMBarrelExpExtra3.ogg"
+$limit HMBarrel/ExpExtra 0
+$pitchset HMBarrel/ExpExtra 0.9 1.15
+$rolloff HMBarrel/ExpExtra 300 1800
+
+HMBarrel/Thud "Sounds/Explosions/HMBarrelExpThud.ogg"
+$limit HMBarrel/Thud 0
+$pitchset HMBarrel/Thud 0.9 1.15
+$rolloff HMBarrel/Thud 300 3500
+
+$random HMBarrel/Distant { HMBarrel/Distant1 HMBarrel/Distant2 HMBarrel/Distant3 HMBarrel/Distant4 HMBarrel/Distant5 }
+HMBarrel/Distant1 "Sounds/Explosions/Distant/HMBarrelExpDistant1.ogg"
+HMBarrel/Distant2 "Sounds/Explosions/Distant/HMBarrelExpDistant2.ogg"
+HMBarrel/Distant3 "Sounds/Explosions/Distant/HMBarrelExpDistant3.ogg"
+HMBarrel/Distant4 "Sounds/Explosions/Distant/HMBarrelExpDistant4.ogg"
+HMBarrel/Distant5 "Sounds/Explosions/Distant/HMBarrelExpDistant5.ogg"
+$limit HMBarrel/Distant 0
+$pitchset HMBarrel/Distant 0.9 1.15
+$rolloff HMBarrel/Distant 200 4800
+
+$random HMBarrel/Break { HMBarrel/Break1 HMBarrel/Break2 }
+HMBarrel/Break1 "Sounds/Debris/HMBarrelBreak1.ogg"
+HMBarrel/Break2 "Sounds/Debris/HMBarrelBreak2.ogg"
+$limit HMBarrel/Break 0
+$pitchset HMBarrel/Break 0.9 1.15
+$rolloff HMBarrel/Break 200 1700
+
+$random HMBarrel/Hit { HMBarrel/Hit1 HMBarrel/Hit2 HMBarrel/Hit3 HMBarrel/Hit4 HMBarrel/Hit5 HMBarrel/Hit6 HMBarrel/Hit7 HMBarrel/Hit8 }
+HMBarrel/Hit1 "Sounds/Impact/HMBarrelHit1.ogg"
+HMBarrel/Hit2 "Sounds/Impact/HMBarrelHit2.ogg"
+HMBarrel/Hit3 "Sounds/Impact/HMBarrelHit3.ogg"
+HMBarrel/Hit4 "Sounds/Impact/HMBarrelHit4.ogg"
+HMBarrel/Hit5 "Sounds/Impact/HMBarrelHit5.ogg"
+HMBarrel/Hit6 "Sounds/Impact/HMBarrelHit6.ogg"
+HMBarrel/Hit7 "Sounds/Impact/HMBarrelHit7.ogg"
+HMBarrel/Hit8 "Sounds/Impact/HMBarrelHit8.ogg"
+$limit HMBarrel/Hit 10

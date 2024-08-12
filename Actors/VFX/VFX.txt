@@ -1,0 +1,153 @@
+Class HM_BulletHit : Actor
+{
+  //Original code done by Bugsie
+  Default
+  {
+  Alpha 1.0;
+  Speed 15;
+  +BRIGHT
+  +MISSILE
+  +CLIENTSIDEONLY
+  +BLOODLESSIMPACT 
+  +FORCEXYBILLBOARD
+  +THRUACTORS
+  -NOGRAVITY
+  +DONTSPLASH
+  +THRUACTORS
+  +NOBLOCKMONST
+  +CANNOTPUSH
+  +NOTRIGGER
+  BounceFactor 1;
+  BounceType "Hexen";
+  RenderStyle "Add";
+  Scale 0.6;
+  Radius 0;
+  Height 1;
+  }
+  states
+  {
+  Spawn:
+    TNT1 A 0;
+	NULL A 0
+	{
+	A_ScaleVelocity(frandom(0.3,0.6));
+	A_SetScale(Scale.X-frandom(0.10,0.45));
+	}
+	NULL A 3;
+	NULL A 1 A_FadeOut(0.105);
+    Wait;
+  }
+}
+
+Class HM_HitPuff : Actor
+{
+    int hitspawn;
+    Default
+	{
+	RenderStyle "Add";
+	Alpha 0.3;
+	Scale 0.8;
+	Radius 0;
+	Height 0;
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+NOEXTREMEDEATH
+	+FORCEXYBILLBOARD
+	+DONTSPLASH
+	-EXPLODEONWATER
+	Gravity 0.01;
+	DamageType "Bullet";
+	Decal "BulletDecalNew1";
+	}
+	
+	override void PostBeginPlay()
+	{ Super.PostBeginPlay();
+	  tex[0] = TexMan.CheckForTexture("GNSML0",TexMan.Type_Sprite);
+	  tex[1] = TexMan.CheckForTexture("LEYSO0",TexMan.Type_Sprite);
+	  tex[2] = TexMan.CheckForTexture("LENYA0",TexMan.Type_Sprite);
+	  hitspawn = random(2,4); }
+	 
+	TextureID tex[3];
+	  
+  States
+  {
+  Spawn:
+    TNT1 A 0;
+	TNT1 A 0 {
+	for(int i=hitspawn;i>0;i--) A_SpawnItemEx("HM_BulletHit",0,0,0,frandom(20,20),frandom(-20,20),frandom(-20,20),random(-360,360),SXF_NOCHECKPOSITION,0);
+	A_SpawnParticleEx
+	( "", tex[0], style: STYLE_Add, flags:SPF_ROLL|SPF_RELATIVE, lifetime:random(5,25), size:random(10,45),
+	  velx:frandom(-0.5,0.5), vely:frandom(-0.5,0.5), velz:frandom(-0.5,0.5),
+	  accelx:frandom(-0.0015,0.0015), accely:frandom(-0.0015,0.0015), accelz:frandom(-0.0015,0.0015), startroll:random(-180,180));
+	A_SpawnParticleEx
+	( "", 
+	  tex[1], 
+	  style: STYLE_Add, 
+	  flags:SPF_ROLL|SPF_RELATIVE|SPF_FULLBRIGHT, 
+	  lifetime: random(1,5), 
+	  size: random(15,45),
+	  startalphaf: frandom(0.15,0.85),
+	  sizestep: frandom(0.25,0.85), 
+	  startroll: random(-180,180));
+	A_SpawnParticleEx
+	( "", 
+	  tex[2], 
+	  style: STYLE_Add, 
+	  flags:SPF_ROLL|SPF_RELATIVE|SPF_FULLBRIGHT, 
+	  lifetime: random(1,6), 
+	  size: random(25,80),
+	  startalphaf: frandom(0.35,0.85),
+	  sizestep: frandom(0.35,0.85), 
+	  startroll: random(-180,180));
+	}
+    Stop;
+  Melee:
+	TNT1 A 1;
+	Stop;
+  }
+}
+
+Class HM_NormalHitSpark : Actor
+{
+    Default
+	{
+	+CLIENTSIDEONLY
+	+FORCEXYBILLBOARD
+	+ROLLSPRITE
+    +NOBLOCKMAP
+    +NOTELEPORT
+    -ALLOWPARTICLES
+    +PUFFGETSOWNER
+	RenderStyle "Normal";
+	Scale 0.65;
+	Height 1;
+	Radius 1;
+	Mass 1;
+	-NOGRAVITY
+	Gravity 0.25;
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+	    TNT1 A 0 {
+		for(int i=random(0,3);i>0;i--)
+		 A_SpawnParticleEx
+		 ( "#d2d2d2", TexMan.CheckForTexture("GNSMK0"), style: STYLE_Add, flags: SPF_RELATIVE|SPF_ROLL, lifetime: random(15,55),
+		 size: frandom(15,46), velx: frandom(-3,3), vely: frandom(-3,3), velz: frandom(-3,3), startalphaf: frandom(0.15,0.55),
+		 fadestepf: 1/*-1*/, sizestep: frandom(0.0,0.90), startroll: random(-180,180), rollvel: frandom(-1,1));
+		for(int i=random(0,3);i>0;i--)
+		 A_SpawnParticleEx
+		 ( "", TexMan.CheckForTexture("GNSML0"), style: STYLE_Normal, flags: SPF_RELATIVE|SPF_ROLL, lifetime: random(25,85),
+		 size: frandom(28,86), velx: frandom(-0.15,0.15), vely: frandom(-0.15,0.15), velz: frandom(-0.50,0.50), startalphaf: frandom(0.15,0.95),
+		 fadestepf: 1/*-1*/, sizestep: frandom(0.0,1.90), startroll: random(-180,180), rollvel: frandom(-1,1));
+		for(int i=random(1,8);i>0;i--)
+		 A_SpawnParticleEx(
+		 "", TexMan.CheckForTexture("DUSTC0"), style: STYLE_Normal, flags: SPF_RELATIVE|SPF_ROLL, lifetime: random(20,60), size: frandom(1,13),
+		 velx: frandom(-5,5), vely: frandom(-5,5), velz: frandom(-5,6), accelz: frandom(-0.3,-0.8), startalphaf: 1.0, sizestep: -0.2, startroll: random(-180,180), rollvel: random(0,4));
+		}
+		TNT1 A 0 A_SpawnItemEx("HM_HitPuff",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
+	    TNT1 A 0 A_StartSound("HMBarrel/Hit",100,CHANF_OVERLAP);
+		Stop;
+	}
+}

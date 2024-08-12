@@ -1,0 +1,42 @@
+Class HM_ExpBarrel : Actor
+{
+	Default
+	{
+		Health 20;
+		Radius 10;
+		Height 32;
+		+SOLID
+		+SHOOTABLE
+		+ACTIVATEMCROSS
+		+DONTGIB
+		+NOICEDEATH
+		+OLDRADIUSDMG
+		DeathSound "";
+		Bloodtype "HM_NormalHitSpark";
+		Obituary "$OB_BARREL";
+	}
+	States
+	{
+	Spawn:
+		BRL_ A 6;
+		Loop;
+	Death:
+		BRL_ A 5 BRIGHT;
+		BRL_ B 5 BRIGHT
+		{
+		A_Scream();
+		A_StartSound("HMBarrel/Explode",34,CHANF_OVERLAP);
+		A_StartSound("HMBarrel/ExpExtra",35,CHANF_OVERLAP,frandom(0.85,1.00));
+		A_StartSound("HMBarrel/Thud",36,CHANF_OVERLAP);
+		A_StartSound("HMBarrel/Distant",37,CHANF_OVERLAP,frandom(0.8,0.95));
+		A_StartSound("HMBarrel/Break",38,CHANF_OVERLAP,frandom(0.3,0.8));
+		A_QuakeEx(2, 2, 2, 60, 0, 500, "none", QF_RELATIVE|QF_SCALEDOWN, falloff: 800);
+		}
+		BEXP C 5 BRIGHT;
+		BEXP D 10 BRIGHT A_Explode;
+		BEXP E 10 BRIGHT;
+		TNT1 A 1050 BRIGHT A_BarrelDestroy;
+		TNT1 A 5 A_Respawn;
+		Wait;
+	}
+}

@@ -1,1 +1,12 @@
-//Placeholder
+Model HM_BulletHit
+{
+  Path "Models"
+  SKIN 0 "hmsparktracer.png"
+  MODEL 0 "tracer.md3"
+  Scale 0.25 2.0 2.0
+  PITCHFROMMOMENTUM
+  ROTATING
+  Rotation-Vector 1.0 0.0 0.0
+  Rotation-Speed 20.0
+  FrameIndex NULL A 0 0
+}
