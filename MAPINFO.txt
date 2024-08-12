@@ -1,0 +1,4 @@
+gameInfo
+{
+	addEventHandlers = "HM_Spawner"
+}

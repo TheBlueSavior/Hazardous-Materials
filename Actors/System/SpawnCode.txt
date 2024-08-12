@@ -1,1 +1,12 @@
 //Placeholder
+
+class HM_Spawner : EventHandler
+{
+    override void CheckReplacement(ReplaceEvent e)
+    {
+            switch (e.replacee.GetClassName())
+			{
+                case 'ExplosiveBarrel': e.Replacement="HM_ExpBarrel"; break;
+            }
+    }
+}

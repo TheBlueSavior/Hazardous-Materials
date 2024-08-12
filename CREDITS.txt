@@ -10,3 +10,4 @@ Half-Life - Sound effects
 H3LLW4LK3R - Shockwave sprite
 Project Brutality - Barrel shrapnel
 Death Foretold - Effect sprites and code
+Antinoe - Spawn replacement code base
