@@ -48,3 +48,23 @@ HMBarrel/Hit6 "Sounds/Impact/HMBarrelHit6.ogg"
 HMBarrel/Hit7 "Sounds/Impact/HMBarrelHit7.ogg"
 HMBarrel/Hit8 "Sounds/Impact/HMBarrelHit8.ogg"
 $limit HMBarrel/Hit 10
+
+$random HMBarrel/Strain { HMBarrel/Strain1 HMBarrel/Strain2 HMBarrel/Strain3 HMBarrel/Strain4 HMBarrel/Strain5 }
+HMBarrel/Strain1 "Sounds/Debris/HMBarrelStrain1.ogg"
+HMBarrel/Strain2 "Sounds/Debris/HMBarrelStrain2.ogg"
+HMBarrel/Strain3 "Sounds/Debris/HMBarrelStrain3.ogg"
+HMBarrel/Strain4 "Sounds/Debris/HMBarrelStrain4.ogg"
+HMBarrel/Strain5 "Sounds/Debris/HMBarrelStrain5.ogg"
+$limit HMBarrel/Strain 0
+$pitchset HMBarrel/Strain 1.0 1.3
+
+$random HMBarrel/DebrisHit { HMBarrel/DebrisHit1 HMBarrel/DebrisHit2 HMBarrel/DebrisHit3 HMBarrel/DebrisHit4 HMBarrel/DebrisHit5 }
+HMBarrel/DebrisHit1 "Sounds/Debris/HMBarrelDebrisHit1.ogg"
+HMBarrel/DebrisHit2 "Sounds/Debris/HMBarrelDebrisHit2.ogg"
+HMBarrel/DebrisHit3 "Sounds/Debris/HMBarrelDebrisHit3.ogg"
+HMBarrel/DebrisHit4 "Sounds/Debris/HMBarrelDebrisHit4.ogg"
+HMBarrel/DebrisHit5 "Sounds/Debris/HMBarrelDebrisHit5.ogg"
+$limit HMBarrel/DebrisHit 0
+$pitchset HMBarrel/DebrisHit 0.85 1.25
+
+Fire/Idle	"Sounds/Other/FireIdle.ogg"

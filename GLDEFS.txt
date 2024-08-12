@@ -1,1 +1,12 @@
-//Placeholder
+
+Pointlight HML_BarrelIgnited
+{
+Color 0.5 0.2 0.0
+Size 14
+}
+
+Pointlight HML_BarrelExplode
+{
+Color 0.5 0.2 0.0
+Size 56
+}
