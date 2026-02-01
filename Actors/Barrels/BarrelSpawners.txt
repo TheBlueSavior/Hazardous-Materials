@@ -1,0 +1,8 @@
+Class HM_RandomBarrelSpawner : RandomSpawner
+{
+Default
+{
+	DropItem "HM_ExpBarrel", 255, 50;
+	DropItem "HM_CryoBarrel", 255, 1;
+}
+}

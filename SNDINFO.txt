@@ -67,4 +67,7 @@ HMBarrel/DebrisHit5 "Sounds/Debris/HMBarrelDebrisHit5.ogg"
 $limit HMBarrel/DebrisHit 0
 $pitchset HMBarrel/DebrisHit 0.85 1.25
 
-Fire/Idle	"Sounds/Other/FireIdle.ogg"
+Fire/Idle	"Sounds/Other/HMFireIdle.ogg"
+Hiss/Idle	"Sounds/Other/HMHissIdle.ogg"
+Cryo/Shatter	"Sounds/Other/HMCryoShatter.ogg"
+Cryo/Freeze	"Sounds/Other/HMCryoFreeze.ogg"

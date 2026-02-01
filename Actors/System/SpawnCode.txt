@@ -6,7 +6,7 @@ class HM_Spawner : EventHandler
     {
             switch (e.replacee.GetClassName())
 			{
-                case 'ExplosiveBarrel': e.Replacement="HM_ExpBarrel"; break;
+                case 'ExplosiveBarrel': e.Replacement="HM_RandomBarrelSpawner"; break;
             }
     }
 }
